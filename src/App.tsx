@@ -1,11 +1,12 @@
-
+import Navbar from "./components/global/Navbar"
+// import Button from "./components/ui/button"
 
 function App() {
 
   return (
-    <>
-      <h1 className='mb-3 text-blue-600'>Emann Potfolio</h1>
-    </>
+    <div className="relative">
+      <Navbar />
+    </div>
   )
 }
 
