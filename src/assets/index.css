@@ -7,17 +7,18 @@
   box-sizing: border-box;
 }
 
-:root {
-  --bg: #080808;
-  --surface: #0e0e0e;
-  --border: #1c1c1c;
-  --text: #f0ece6;
-  --dim: #555;
-  --dim2: #333;
-  --accent: #b8ff00;
-  --display: "Bebas Neue", sans-serif;
-  --body: "Manrope", sans-serif;
-  --mono: "JetBrains Mono", monospace;
+@theme {
+  --color-bg: #080808;
+  --color-surface: #0e0e0e;
+  --color-border: #1c1c1c;
+  --color-text: #f0ece6;
+  --color-dim: #555;
+  --color-dim2: #333;
+  --color-accent: #b8ff00;
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 html {
@@ -26,16 +27,16 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 ::-webkit-scrollbar {
@@ -43,11 +44,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--dim2);
+  background: var(--color-dim2);
 }
 
 
@@ -73,4 +74,18 @@ body {
 
 #particles {
   animation: particles 0.8s steps(2) infinite;
+}
+
+@keyframes scroll-line {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2.2s ease-in-out infinite;
 }

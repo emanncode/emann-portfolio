@@ -1,5 +1,7 @@
 import Navbar from "@/components/layout/navbar/Navbar";
 
+import Hero from "@/components/sections/hero/Hero";
+
 import Section from "@/components/layout/Section";
 
 import Divider from "@/components/ui/divider/Divider";
@@ -15,7 +17,11 @@ export default function App() {
     <main className="min-h-screen bg-bg text-text">
       <Navbar />
 
-      <Section id="about" className="pt-40">
+      <Hero />
+
+      <Divider />
+
+      <Section id="about" className="pt-28">
         <Reveal>
           <SectionLabel number="01" title="About" />
         </Reveal>
@@ -35,8 +41,6 @@ export default function App() {
           <Button rightIcon={<ArrowRight size={18} />}>Contact Me</Button>
         </Reveal>
       </Section>
-
-      <Divider />
     </main>
   );
 }
