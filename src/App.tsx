@@ -5,10 +5,11 @@ import AboutSection from "@/components/sections/about/AboutSection";
 import ProjectsSection from "@/components/sections/projects/ProjectsSection";
 import SkillsSection from "@/components/sections/skills/SkillsSection";
 import ExperienceSection from "@/components/sections/experience/ExperienceSection";
+import ContactSection from "@/components/sections/contact/ContactSection";
 
 import Cursor from "@/components/providers/Cursor";
-import ScrollProgress from "@/components/providers/ScrollProgress";
 import Grain from "@/components/providers/Grain";
+import PageTransition from "@/components/providers/PageTransition";
 
 import Divider from "@/components/ui/divider/Divider";
 
@@ -18,37 +19,43 @@ export default function App() {
       {/* GLOBAL EFFECTS */}
       <Cursor />
 
-      <ScrollProgress />
-
       <Grain />
 
       {/* NAVBAR */}
       <Navbar />
 
-      {/* HERO */}
-      <Hero />
+      {/* PAGE */}
+      <PageTransition>
+        {/* HERO */}
+        <Hero />
 
-      <Divider />
+        <Divider />
 
-      {/* ABOUT */}
-      <AboutSection />
+        {/* ABOUT */}
+        <AboutSection />
 
-      <Divider />
+        <Divider />
 
-      {/* PROJECTS */}
-      <ProjectsSection />
+        {/* PROJECTS */}
+        <ProjectsSection />
 
-      <Divider />
+        <Divider />
 
-      {/* SKILLS */}
-      <SkillsSection />
+        {/* SKILLS */}
+        <SkillsSection />
 
-      <Divider />
+        <Divider />
 
-      {/* EXPERIENCE */}
-      <ExperienceSection />
+        {/* EXPERIENCE */}
+        <ExperienceSection />
 
-      <Divider />
+        <Divider />
+
+        {/* CONTACT */}
+        <ContactSection />
+
+        <Divider />
+      </PageTransition>
     </main>
   );
 }

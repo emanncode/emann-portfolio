@@ -1,85 +1,70 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
-import { navigationLinks } from "@/data/navigation";
-
-import { cn } from "@/lib/utils";
-
 import NavLogo from "./NavLogo";
-import NavLink from "./NavLink";
+import NavLinks from "./NavLinks";
+import ResumeButton from "./ResumeButton";
+import MobileMenu from "./MobileMenu";
+import MobileMenuButton from "./MobileMenuButton";
+import NavbarProgress from "./NavbarProgress";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
-  const [activeSection, setActiveSection] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-
-      const sections = navigationLinks.map((link) =>
-        document.querySelector(link.href),
-      );
-
-      const scrollY = window.scrollY + 140;
-
-      sections.forEach((section, index) => {
-        if (!section) return;
-
-        const top = (section as HTMLElement).offsetTop;
-
-        if (scrollY >= top) {
-          setActiveSection(navigationLinks[index].href);
-        }
-      });
+      setScrolled(window.scrollY > 40);
     };
 
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "auto";
+  }, [mobileOpen]);
+
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 z-50 w-full",
-        "transition-all duration-300",
+    <>
+      {/* SCROLL PROGRESS */}
+      <NavbarProgress />
 
-        scrolled && "border-b border-border bg-black/80 backdrop-blur-xl",
-      )}
-    >
-      <div className="relative flex items-center justify-between px-6 py-5 md:px-10 xl:px-12">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-b from-bg to-transparent" />
+      <header
+        className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
+          scrolled
+            ? "border-b border-border bg-bg/80 backdrop-blur-2xl"
+            : "bg-transparent"
+        }`}
+      >
+        <nav className="flex items-center justify-between px-6 py-5 md:px-10 xl:px-14">
+          {/* LOGO */}
+          <NavLogo />
 
-        <NavLogo />
+          {/* RIGHT */}
+          <div className="flex items-center gap-4">
+            {/* DESKTOP */}
+            <NavLinks />
 
-        <nav className="hidden items-center gap-10 md:flex">
-          {navigationLinks.map((link) => (
-            <NavLink
-              key={link.href}
-              href={link.href}
-              label={link.label}
-              active={activeSection === link.href}
+            {/* RESUME */}
+            <ResumeButton />
+
+            {/* MOBILE BUTTON */}
+            <MobileMenuButton
+              open={mobileOpen}
+              onClick={() => setMobileOpen((prev) => !prev)}
             />
-          ))}
+          </div>
         </nav>
+      </header>
 
-        <div
-          className={cn(
-            "hidden md:block",
-            "font-mono text-[10px] uppercase tracking-[0.15em]",
-            "border border-accent/50! px-4 py-2",
-            "text-accent!",
-          )}
-        >
-          Open to Work
-        </div>
-      </div>
-    </header>
+      {/* MOBILE MENU */}
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+    </>
   );
 }
