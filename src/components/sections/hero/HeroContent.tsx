@@ -10,6 +10,7 @@ export default function HeroContent() {
       className="
         flex flex-col justify-end
         pt-32 pb-14
+        max-w-[95vw] sm:max-w-[90vw] xl:max-w-[75rem]
       "
     >
       <motion.p
@@ -54,10 +55,11 @@ export default function HeroContent() {
         }}
         className="
           mt-7
-          max-w-140
-          text-[clamp(15px,1.6vw,20px)]
-          leading-relaxed
+          max-w-[42rem]
+          text-base
+          leading-[1.8]
           text-white/60
+          sm:text-lg
         "
       >
         {heroData.description}

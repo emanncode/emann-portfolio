@@ -11,7 +11,11 @@ export default function HeroTitle({ title }: HeroTitleProps) {
         font-display
         leading-[0.87]
         tracking-[-1px]
-        text-[clamp(72px,13vw,190px)]
+        text-[clamp(3.8rem,15vw,11rem)]
+        leading-[0.88]
+        tracking-[-0.06em]
+        xs:text-[clamp(4.2rem,14vw,11rem)]
+        sm:text-[clamp(5rem,12vw,11rem)]
       "
     >
       {title.map((line, index) => (

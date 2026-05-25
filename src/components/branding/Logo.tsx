@@ -1,4 +1,4 @@
-import LogoIcon from "./LogoIcon";
+// import LogoIcon from "./LogoIcon";
 import LogoWordmark from "./LogoWordmark";
 
 type LogoProps = {
@@ -8,7 +8,7 @@ type LogoProps = {
 export default function Logo({ minimal = false }: LogoProps) {
   return (
     <div className="flex items-center gap-4">
-      <LogoIcon />
+      {/* <LogoIcon /> */}
 
       {!minimal && <LogoWordmark />}
     </div>
