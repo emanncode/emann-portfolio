@@ -1,6 +1,7 @@
 import Reveal from "@/components/ui/reveal/Reveal";
 
 import SkillCategory from "./SkillCategory";
+import Section from "@/components/layout/Section";
 
 const skillGroups = [
   {
@@ -80,7 +81,8 @@ const skillGroups = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="px-6 py-28 md:px-10 xl:px-14">
+  <Section id="projects" className="relative overflow-hidden">
+      <div></div>
       <p className="mb-10 flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
         03 / Skills
         <span className="h-px w-12 bg-primary" />
@@ -104,6 +106,6 @@ export default function SkillsSection() {
           />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

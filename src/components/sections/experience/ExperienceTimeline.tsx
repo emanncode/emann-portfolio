@@ -2,7 +2,7 @@ import ExperienceCard from "./ExperienceCard";
 
 const experiences = [
   {
-    year: "04/2024 - 12/2024",
+    year: "04/2025 - 12/2025",
     role: "Frontend Developer",
     company: "Thegigs.co",
     description:
@@ -10,7 +10,7 @@ const experiences = [
   },
 
   {
-    year: "11/2024 — Present",
+    year: "11/2025 — Present",
     role: "Frontend & Backend Engineer",
     company: "Rouvoo",
     description:
@@ -18,7 +18,7 @@ const experiences = [
   },
 
   {
-    year: "04/2024 — Present",
+    year: "04/2025 — Present",
     role: "Frontend Engineer",
     company: "Browpay",
     description:

@@ -2,10 +2,11 @@ import Reveal from "@/components/ui/reveal/Reveal";
 
 import ContactLinks from "./ContactLinks";
 import ContactForm from "./ContactForm";
+import Section from "@/components/layout/Section";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="px-6 py-28 md:px-10 xl:px-14">
+    <Section id="contact" className="relative overflow-hidden">
       {/* SECTION LABEL */}
       <p className="mb-10 flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
         05 / Contact
@@ -33,6 +34,6 @@ export default function ContactSection() {
           <ContactForm />
         </Reveal>
       </div>
-    </section>
+    </Section>
   );
 }

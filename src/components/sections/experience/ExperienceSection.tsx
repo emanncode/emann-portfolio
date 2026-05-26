@@ -1,10 +1,11 @@
 import Reveal from "@/components/ui/reveal/Reveal";
 
 import ExperienceTimeline from "./ExperienceTimeline";
+import Section from "@/components/layout/Section";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="px-6 py-28 md:px-10 xl:px-14">
+    <Section id="experience" className="relative overflow-hidden">
       <p className="mb-10 flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
         04 / Experience
         <span className="h-px w-12 bg-primary" />
@@ -19,6 +20,6 @@ export default function ExperienceSection() {
       </Reveal>
 
       <ExperienceTimeline />
-    </section>
+    </Section>
   );
 }

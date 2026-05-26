@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/sections/projects/ProjectsSection";
 import SkillsSection from "@/components/sections/skills/SkillsSection";
 import ExperienceSection from "@/components/sections/experience/ExperienceSection";
 import ContactSection from "@/components/sections/contact/ContactSection";
+import FooterSection from "@/components/sections/footer/FooterSection";
 
 import Cursor from "@/components/providers/Cursor";
 import Grain from "@/components/providers/Grain";
@@ -58,6 +59,9 @@ export default function App() {
         <ContactSection />
 
         <Divider />
+
+        {/* FOOTER */}
+        <FooterSection />
       </PageTransition>
     </main>
   );
