@@ -23,7 +23,6 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 body {
@@ -87,14 +86,4 @@ body {
 
 .animate-grain {
   animation: grain 0.8s steps(2) infinite;
-}
-
-html,
-body {
-  cursor: none;
-}
-
-a,
-button {
-  cursor: none;
 }

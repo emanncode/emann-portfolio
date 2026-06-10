@@ -8,7 +8,6 @@ import ExperienceSection from "@/components/sections/experience/ExperienceSectio
 import ContactSection from "@/components/sections/contact/ContactSection";
 import FooterSection from "@/components/sections/footer/FooterSection";
 
-import Cursor from "@/components/providers/Cursor";
 import Grain from "@/components/providers/Grain";
 import PageTransition from "@/components/providers/PageTransition";
 
@@ -21,8 +20,6 @@ export default function App() {
       <IntroLoader />
 
       {/* GLOBAL EFFECTS */}
-      <Cursor />
-
       <Grain />
 
       {/* NAVBAR */}
